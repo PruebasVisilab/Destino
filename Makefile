@@ -5,15 +5,14 @@ help:
 	echo "make help       	- Imprime esta ayuda"
 	echo "make push       	- Sube cambios al repositorio"
 	echo "make pull	      	- Actualiza el repositorio"
-	echo "make run_serial 	- Actualiza, copia y ejecuta el codigo mavlink_serial.c"
 	echo "make credentials	- Guarda las credenciales de git"
 
-push: clean delete_executables
+push: clean
 	git add * -f
 	git commit -m "Commit desde Makefile"
 	git push origin master
 
-pull: delete_executables
+pull:
 	git pull
 
 credentials:
